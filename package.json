@@ -1,0 +1,25 @@
+{
+  "name": "encurtador-url-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/RenanYFC/Encurtador-URL-Back-end#readme",
+  "bugs": {
+    "url": "https://github.com/RenanYFC/Encurtador-URL-Back-end/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenanYFC/Encurtador-URL-Back-end.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
