@@ -10,6 +10,23 @@ app.listen(port, ()=>{
 
 app.use(bodyParser.json());
 
+const API_KEY = process.env.API_KEY;
+
+// Middleware de verificação
+app.use((req,res,next)=>{
+    const key = req.headers?.key;
+
+    if (key && key == API_KEY) {
+        next();
+    }
+    else {
+        console.log(req.headers);
+        res.status(500).send("Acesso não autorizado");
+    }
+});
+
+
+
 app.get('/urls', async (req,res,next)=>{
     const resposta = {
         cod_url: "LaTa12",
