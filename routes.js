@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -7,6 +8,11 @@ const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
     console.log("servidor iniciado");
 });
+
+app.use(cors({
+    origin: 'http://localhost:5173', 
+    methods: ['GET', 'POST'] // Especificar os métodos permitidos é opcional
+}))
 
 app.use(bodyParser.json());
 
@@ -39,7 +45,8 @@ app.get('/urls', async (req,res,next)=>{
 app.post('/urls', async (req, res, next)=>{
     const resposta = {
         status: "sucesso",
-        mensagem: "URL criada com sucesso"
+        mensagem: "URL criada com sucesso",
+        cod_url: "LaTa12"
     }
     res.status(201).send(resposta);
 });
